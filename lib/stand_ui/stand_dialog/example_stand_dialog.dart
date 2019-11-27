@@ -58,7 +58,31 @@ class _ExampleStandDialogState extends State<ExampleStandDialog> {
                     ),
                   ],
                 ),
-                ],
+
+                /// 确认弹窗
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    buildTitle('确认弹窗'),
+                    Wrap(
+                      children: <Widget>[
+                        buildContainer(
+                          child: StandButton(
+                            type: ButtonType.primary,
+                            text: Text('确认弹窗'),
+                            onPressed: () {
+                              StandDialog.confirm(
+                                context: context
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+
+              ],
             ),
           ),
         ),

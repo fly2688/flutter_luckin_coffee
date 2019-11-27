@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'alert.dart';
+import 'confirm.dart';
 
 class StandDialog {
   StandDialog({
@@ -34,6 +35,22 @@ class StandDialog {
       message: message,
       title: title,
       onOk: onOk
+    );
+  }
+
+  StandDialog.confirm({
+    @required this.context,
+    this.message = '代码是写出来给人看的，附带能在机器上运行',
+    this.title = '标题', 
+    VoidCallback onOk,
+    VoidCallback onCancel,
+  }) {
+    Confirm(
+      context: context,
+      message: message,
+      title: title,
+      onOk: onOk,
+      onCancel: onCancel
     );
   }
 }
